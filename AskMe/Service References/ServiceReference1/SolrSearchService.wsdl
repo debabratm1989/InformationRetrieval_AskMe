@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="QuerySolr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="keyword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="notKeyword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rows" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fuzzy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="highlight" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QuerySolrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QuerySolrResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="QuerySolrSoapIn">
+    <wsdl:part name="parameters" element="tns:QuerySolr" />
+  </wsdl:message>
+  <wsdl:message name="QuerySolrSoapOut">
+    <wsdl:part name="parameters" element="tns:QuerySolrResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SolrSearchServiceSoap">
+    <wsdl:operation name="QuerySolr">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Query Solr server and return XML response</wsdl:documentation>
+      <wsdl:input message="tns:QuerySolrSoapIn" />
+      <wsdl:output message="tns:QuerySolrSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SolrSearchServiceSoap" type="tns:SolrSearchServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QuerySolr">
+      <soap:operation soapAction="http://tempuri.org/QuerySolr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SolrSearchServiceSoap12" type="tns:SolrSearchServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QuerySolr">
+      <soap12:operation soapAction="http://tempuri.org/QuerySolr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SolrSearchService">
+    <wsdl:port name="SolrSearchServiceSoap" binding="tns:SolrSearchServiceSoap">
+      <soap:address location="http://localhost:8357/SolrSearchService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SolrSearchServiceSoap12" binding="tns:SolrSearchServiceSoap12">
+      <soap12:address location="http://localhost:8357/SolrSearchService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

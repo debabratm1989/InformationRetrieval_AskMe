@@ -1,0 +1,15 @@
+1 http://localhost:8000/wikipedia_en_all_nopic_2015-05/A/Geographic_coordinate_system.html
+1 http://localhost:8000/wikipedia_en_all_nopic_2015-05/A/Digital_object_identifier.html
+1 http://localhost:8000/wikipedia_en_all_nopic_2015-05/A/List_of_rivers_of_New_Zealand.html
+1 http://localhost:8000/wikipedia_en_all_nopic_2015-05/A/Russian_language.html
+1 http://localhost:8000/wikipedia_en_all_nopic_2015-05/A/Stream.html
+0 http://localhost:8000/wikipedia_en_all_nopic_2015-05/A/International_Standard_Book_Number.html
+0 http://localhost:8000/wikipedia_en_all_nopic_2015-05/A/U.S._state.html
+0 http://localhost:8000/wikipedia_en_all_nopic_2015-05/A/Coordinated_Universal_Time.html
+0 http://localhost:8000/wikipedia_en_all_nopic_2015-05/A/Time_zone.html
+0 http://localhost:8000/wikipedia_en_all_nopic_2015-05/A/Pacific_Ocean.html
+2 http://localhost:8000/wikipedia_en_all_nopic_2015-05/A/Atlantic_Ocean.html
+2 http://localhost:8000/wikipedia_en_all_nopic_2015-05/A/Costa_Rica.html
+2 http://localhost:8000/wikipedia_en_all_nopic_2015-05/A/Bolivia.html
+2 http://localhost:8000/wikipedia_en_all_nopic_2015-05/A/2010_United_States_Census.html
+2 http://localhost:8000/wikipedia_en_all_nopic_2015-05/A/2000_United_States_Census.html
